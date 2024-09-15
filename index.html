@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fyaz Mohammed</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* CSS Variables */
+        :root {
+            --main-bg-color: #0c0c0c;
+            --overlay-bg-color: rgba(0, 0, 0, 0.5);
+            --text-color: #ddd;
+            --accent-color: #FFD700;
+            --font-family-primary: 'Poppins', sans-serif;
+            --font-family-secondary: 'Playfair Display', serif;
+        }
+
+        /* Basic Reset */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styles */
+        body,
+        html {
+            height: 100%;
+            font-family: var(--font-family-primary);
+            overflow-x: hidden;
+            color: var(--text-color);
+            background: var(--main-bg-color);
+            scroll-behavior: smooth;
+        }
+
+        /* Background */
+        .background {
+            background-image: url('assets/images/bg.jpeg'); /* Updated path */
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            height: 100%;
+            width: 100%;
+            position: relative;
+            animation: backgroundAnimation 20s infinite alternate; /* Background animation */
+        }
+
+        @keyframes backgroundAnimation {
+            0% {
+                filter: brightness(1);
+            }
+
+            100% {
+                filter: brightness(1.2);
+            }
+        }
+
+        /* Overlay */
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: var(--overlay-bg-color);
+            z-index: 1;
+        }
+
+        /* Header */
+        .header {
+            position: absolute;
+            top: 2%;
+            right: 2%;
+            display: flex;
+            align-items: center;
+            z-index: 3;
+            gap: 15px;
+            padding: 10px 15px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            animation: slideInFromRight 1s ease-out;
+        }
+
+        .header img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .header img:hover {
+            transform: scale(1.1);
+        }
+
+        .header h2 {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 700;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            font-size: 1.25rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--accent-color);
+            transform: scale(1.2);
+            animation: pulse 0.5s infinite alternate; /* Add pulse effect on hover */
+        }
+
+        /* Content */
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 3;
+            padding: 2rem;
+            border: 2px solid #fff;
+            border-radius: 12px;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+            width: 90%;
+            max-width: 600px;
+            color: #fff;
+        }
+
+        .content h1 {
+            font-family: var(--font-family-secondary);
+            font-size: 3rem;
+            margin-bottom: 1.25rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .content h1:hover {
+            color: var(--accent-color);
+            transform: rotateY(5deg);
+        }
+
+        .content p {
+            font-size: 1.5rem;
+            line-height: 1.5;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInFromRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }*/
+
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.1);
+            }
+        }
+
+        /* Responsive Design */
+        /* Base Styles */
+        @media (max-width: 1200px) {
+            .header {
+                padding: 10px;
+                top: 5%;
+                right: 5%;
+            }
+
+            .header h2 {
+                font-size: 1.25rem;
+            }
+
+            .content {
+                padding: 1.5rem;
+            }
+
+            .content h1 {
+                font-size: 2.5rem;
+            }
+
+            .content p {
+                font-size: 1.25rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+                right: 50%;
+                transform: translateX(50%);
+            }
+
+            .header h2 {
+                font-size: 1.25rem;
+                text-align: center;
+            }
+
+            .header img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+
+            .content {
+                width: 90%;
+                padding: 1.5rem;
+            }
+
+            .content h1 {
+                font-size: 2.5rem;
+            }
+
+            .content p {
+                font-size: 1.25rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+                padding: 0.5rem 1rem;
+            }
+
+            .header h2 {
+                font-size: 1rem;
+                flex-grow: 1;
+                text-align: center;
+            }
+
+            .social-icons {
+                gap: 5px;
+                font-size: 1rem;
+            }
+
+            .content h1 {
+                font-size: 2rem;
+            }
+
+            .content p {
+                font-size: 1rem;
+            }
+        }
+
+        /* TV Styles */
+        @media (min-width: 1920px) {
+            .header {
+                top: 3%;
+                right: 3%;
+                padding: 20px;
+            }
+
+            .header h2 {
+                font-size: 2rem;
+            }
+
+            .content {
+                width: 80%;
+                padding: 3rem;
+            }
+
+            .content h1 {
+                font-size: 4rem;
+            }
+
+            .content p {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">
+        <div class="overlay"></div>
+
+        <header class="header">
+            <img src="assets/images/dp.jpeg" alt="Display Picture of Your Name">
+            <h2>Fyaz Mohammed</h2>
+            <nav class="social-icons">
+                <a href="https://linkedin.com/in/fyaz05" target="_blank" aria-label="LinkedIn Profile">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/fyaz05" target="_blank" aria-label="GitHub Profile">
+                    <i class="fab fa-github"></i>
+                </a>
+            </nav>
+        </header>
+
+        <main class="content">
+            <h1>You've reached the world's Edge</h1>
+            <p>None but Devils play here. Turn back!<br>
+                Stop wandering around the site.</p>
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const background = document.querySelector('.background');
+            window.addEventListener('scroll', () => {
+                const offset = window.scrollY;
+                background.style.backgroundPositionY = offset * 0.5 + "px";
+            });
+        });
+    </script>
+</body>
+
+</html>
